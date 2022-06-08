@@ -39,5 +39,15 @@ namespace ProductReviewManagement
                 Console.WriteLine("\nProduct ID:- " + list.ProductId + " " + "User ID:- " + list.UserId + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.ReviewList + " " + "Is Like:- " + list.IsLike);
             }
         }
+        public void RetrieveCountOfRecords(List<ProductReview> listProductReview)
+        {
+            var recordedData = listProductReview.GroupBy(y => y.ProductId).Select(x => new { ProductId = x.Key, Count = x.Count() });
+            Console.WriteLine("\n********** COUNT OF REVIEW PRESENT FOR EACH PRODUCT ID **********");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("\nProduct Id:- " + list.ProductId + "\t\t" + "Count:- " + list.Count);
+
+            }
+        }
     }
 }
