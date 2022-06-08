@@ -12,7 +12,7 @@ namespace ProductReviewManagement
             reviewList.Add(new ProductReview() { ProductId = 1, UserId = 1, Rating = 5, ReviewList = "Good", IsLike = "True" });
             reviewList.Add(new ProductReview() { ProductId = 2, UserId = 2, Rating = 4, ReviewList = "Ok", IsLike = "True" });
             reviewList.Add(new ProductReview() { ProductId = 3, UserId = 3, Rating = 4, ReviewList = "OK", IsLike = "True" });
-            reviewList.Add(new ProductReview() { ProductId = 4, UserId = 4, Rating = 3, ReviewList = "Average", IsLike = "True" });
+            reviewList.Add(new ProductReview() { ProductId = 4, UserId = 4, Rating = 4, ReviewList = "Ok", IsLike = "True" });
             reviewList.Add(new ProductReview() { ProductId = 5, UserId = 5, Rating = 2, ReviewList = "Normal", IsLike = "False" });
             reviewList.Add(new ProductReview() { ProductId = 6, UserId = 6, Rating = 1, ReviewList = "Worst", IsLike = "False" });
             reviewList.Add(new ProductReview() { ProductId = 7, UserId = 7, Rating = 5, ReviewList = "Good", IsLike = "True" });
@@ -39,7 +39,7 @@ namespace ProductReviewManagement
             bool verify = true;
             while (verify)
             {
-                Console.WriteLine("\nEnter :\n1. Display Product Review\n2. Get Top 3 Three Records Having Highest Rating\n3. Exit\n");
+                Console.WriteLine("\nEnter :\n1. Display Product Review\n2. Get Top 3 Three Records Having Highest Rating\n3. Retrieving Selected Records\n4. Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -50,6 +50,9 @@ namespace ProductReviewManagement
                         operation.GetTopRecords(reviewList);
                         break;
                     case 3:
+                        operation.SelectedRecords(reviewList);
+                        break;
+                    case 4:
                         verify = false;
                         break;
                     default:
