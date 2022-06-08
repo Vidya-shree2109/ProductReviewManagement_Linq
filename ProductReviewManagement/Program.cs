@@ -34,6 +34,8 @@ namespace ProductReviewManagement
             reviewList.Add(new ProductReview() { ProductId = 23, UserId = 23, Rating = 5, ReviewList = "Good", IsLike = "True" });
             reviewList.Add(new ProductReview() { ProductId = 24, UserId = 24, Rating = 3, ReviewList = "Average", IsLike = "True" });
             reviewList.Add(new ProductReview() { ProductId = 25, UserId = 25, Rating = 4, ReviewList = "Ok", IsLike = "True" });
+
+            Operations operation = new Operations();
         }
     }
 }
