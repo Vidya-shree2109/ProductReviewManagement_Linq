@@ -39,7 +39,7 @@ namespace ProductReviewManagement
             bool verify = true;
             while (verify)
             {
-                Console.WriteLine("\nEnter :\n1. Display Product Review\n2. Get Top 3 Three Records Having Highest Rating\n3. Retrieving Selected Records\n4. Retrieving Count Of Review\n5. Retrieving Only Product ID And Review\n6. Skip Top 5 Records\n7. Exit\n");
+                Console.WriteLine("\nEnter :\n1. Display Product Review\n2. Get Top 3 Three Records Having Highest Rating\n3. Retrieving Selected Records\n4. Retrieving Count Of Review\n5. Retrieving Only Product ID And Review\n6. Skip Top 5 Records\n7. Displaying Records Where IsLike Is True\n8. Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -62,6 +62,9 @@ namespace ProductReviewManagement
                         operation.SkipTop5Records(reviewList);
                         break;
                     case 7:
+                        operation.RetrieveRecords_WhenIsLikeIsTrue(reviewList);
+                        break;
+                    case 8:
                         verify = false;
                         break;
                     default:
