@@ -72,10 +72,10 @@ namespace ProductReviewManagement
             var recordedData = from productReview in listProductReview
                                where productReview.IsLike == "True"
                                select productReview;
-            Console.WriteLine("\n********** DISPLAYING RECORDS WHERE ISLIKE IS TRUE **********");
+            Console.WriteLine("\n********** DISPLAYING RECORDS WHERE ISLIKE IS TRUE **********\n");
             foreach (var list in recordedData)
             {
-                Console.WriteLine("\nProduct ID:- " + list.ProductId + " " + "User ID:- " + list.UserId + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.ReviewList + " " + "Is Like:- " + list.IsLike);
+                Console.WriteLine("Product ID:- " + list.ProductId + "\t\t" + "User ID:- " + list.UserId + "\t\t" + "Rating:- " + list.Rating + "\t\t" + "Review:- " + list.ReviewList + "\t\t" + "Is Like:- " + list.IsLike);
             }
         }
     }
