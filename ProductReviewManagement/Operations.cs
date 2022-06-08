@@ -78,5 +78,16 @@ namespace ProductReviewManagement
                 Console.WriteLine("Product ID:- " + list.ProductId + "\t\t" + "User ID:- " + list.UserId + "\t\t" + "Rating:- " + list.Rating + "\t\t" + "Review:- " + list.ReviewList + "\t\t" + "Is Like:- " + list.IsLike);
             }
         }
+        public void RetrieveRecords_WhereReviewIsNice(List<ProductReview> listProductReview)
+        {
+            var recordedData = from productReview in listProductReview
+                               where productReview.ReviewList == "Nice"
+                               select productReview;
+            Console.WriteLine("\n********** DISPLAYING RECORDS WHERE REVIEW IS NICE **********\n");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("Product ID:- " + list.ProductId + "\t\t" + "User ID:- " + list.UserId + "\t\t" + "Rating:- " + list.Rating + "\t\t" + "Review:- " + list.ReviewList + "\t\t" + "Is Like:- " + list.IsLike);
+            }
+        }
     }
 }
