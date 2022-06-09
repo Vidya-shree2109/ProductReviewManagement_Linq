@@ -89,5 +89,26 @@ namespace ProductReviewManagement
                 Console.WriteLine("Product ID:- " + list.ProductId + "\t\t" + "User ID:- " + list.UserId + "\t\t" + "Rating:- " + list.Rating + "\t\t" + "Review:- " + list.ReviewList + "\t\t" + "Is Like:- " + list.IsLike);
             }
         }
+        public void AverageRating(List<ProductReview> listProductReview)
+        {
+            var result = listProductReview.GroupBy (x => x.ProductId).Select(x => new { ProductId = x.Key, Review = x.Average(t => t.Rating) });
+            Console.WriteLine("\n********** AVERAGE RATING FOR EACH PRODUCT ID **********\n");
+            foreach (var list in result)
+            {
+                Console.WriteLine("Product ID:- " + list.ProductId + "\t\t" + "Average:- " + list.Review);
+            }
+        }
+        public void RetrievingOnlyParticularUserId(List<ProductReview> listProductReview)
+        {
+            var recordedData = from productReview in listProductReview
+                               where productReview.UserId == 10 orderby productReview.Rating
+                               select productReview;
+
+            Console.WriteLine("\n********** RETRIEVING RECORDS FOR USER ID 10 **********\n");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("Product ID:- " + list.ProductId + "\t\t" + "User ID:- " + list.UserId + "\t\t" + "Rating:- " + list.Rating + "\t\t" + "Review:- " + list.ReviewList + "\t\t" + "Is Like:- " + list.IsLike);
+            }
+        }
     }
 }

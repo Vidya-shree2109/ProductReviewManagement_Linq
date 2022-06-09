@@ -19,10 +19,10 @@ namespace ProductReviewManagement
             reviewList.Add(new ProductReview() { ProductId = 8, UserId = 8, Rating = 5, ReviewList = "Good", IsLike = "True" });
             reviewList.Add(new ProductReview() { ProductId = 9, UserId = 9, Rating = 4, ReviewList = "Nice", IsLike = "True" });
             reviewList.Add(new ProductReview() { ProductId = 10, UserId = 10, Rating = 3, ReviewList = "Average", IsLike = "True" });
-            reviewList.Add(new ProductReview() { ProductId = 11, UserId = 11, Rating = 4, ReviewList = "Nice", IsLike = "True" });
-            reviewList.Add(new ProductReview() { ProductId = 12, UserId = 12, Rating = 4, ReviewList = "Nice", IsLike = "True" });
-            reviewList.Add(new ProductReview() { ProductId = 13, UserId = 13, Rating = 2, ReviewList = "Normal", IsLike = "False" });
-            reviewList.Add(new ProductReview() { ProductId = 14, UserId = 14, Rating = 3, ReviewList = "Average", IsLike = "True" });
+            reviewList.Add(new ProductReview() { ProductId = 11, UserId = 10, Rating = 4, ReviewList = "Nice", IsLike = "True" });
+            reviewList.Add(new ProductReview() { ProductId = 12, UserId = 10, Rating = 4, ReviewList = "Nice", IsLike = "True" });
+            reviewList.Add(new ProductReview() { ProductId = 13, UserId = 10, Rating = 2, ReviewList = "Normal", IsLike = "False" });
+            reviewList.Add(new ProductReview() { ProductId = 14, UserId = 10, Rating = 3, ReviewList = "Average", IsLike = "True" });
             reviewList.Add(new ProductReview() { ProductId = 15, UserId = 15, Rating = 3, ReviewList = "Average", IsLike = "True" });
             reviewList.Add(new ProductReview() { ProductId = 16, UserId = 16, Rating = 4, ReviewList = "Nice", IsLike = "True" });
             reviewList.Add(new ProductReview() { ProductId = 17, UserId = 17, Rating = 4, ReviewList = "Nice", IsLike = "True" });
@@ -39,7 +39,7 @@ namespace ProductReviewManagement
             bool verify = true;
             while (verify)
             {
-                Console.WriteLine("\nEnter :\n1. Display Product Review\n2. Get Top 3 Three Records Having Highest Rating\n3. Retrieving Selected Records\n4. Retrieving Count Of Review\n5. Retrieving Only Product ID And Review\n6. Skip Top 5 Records\n7. Display Records Where IsLike Is True\n8. Display Records Where Review Is Nice\n9. Exit\n");
+                Console.WriteLine("\nEnter :\n1. Display Product Review\n2. Get Top 3 Three Records Having Highest Rating\n3. Retrieving Selected Records\n4. Retrieving Count Of Review\n5. Retrieving Only Product ID And Review\n6. Skip Top 5 Records\n7. Display Records Where IsLike Is True\n8. Display Records Where Review Is Nice\n9. Average Rating For Each Product ID\n10. Retrieving Records For User ID 10\n11. Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -68,6 +68,12 @@ namespace ProductReviewManagement
                         operation.RetrieveRecords_WhereReviewIsNice(reviewList);
                         break;
                     case 9:
+                        operation.AverageRating(reviewList);
+                        break;
+                    case 10:
+                        operation.RetrievingOnlyParticularUserId(reviewList);
+                        break;
+                    case 11:
                         verify = false;
                         break;
                     default:
